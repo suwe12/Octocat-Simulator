@@ -20,7 +20,7 @@
 
 ## 可用指令 / Available Commands
 
-\- [喂食|降低饥饿 ](https://github.com/suwe12/issues/Octocat-Simulator/new?title=FEED%7COctavia%7Cyour-name&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
+\- [喂食|降低饥饿 ](https://github.com/suwe12/Octocat-Simulator/issues/new?title=FEED%7COctavia%7Ca&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
 
 \- [玩耍|玩耍，提升心情 ](https://github.com/suwe12/Octocat-Simulator/issues/new?title=PLAY%7COctavia%7Ca&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
 
