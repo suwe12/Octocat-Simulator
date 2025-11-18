@@ -5,9 +5,9 @@
 ## 状态概览 / Status Overview
 
 - **健康 Health**: 95 / 100 ❤️❤️❤️❤️
-- **饥饿 Hunger**: 90 / 100 🍽️
+- **饥饿 Hunger**: 70 / 100 🍽️
 - **心情 Mood**: 70 / 100 😊😊😊
-- **当前表情 Emoji**: 😰
+- **当前表情 Emoji**: 😐
 
 ## 可用指令 / Available Commands
 
@@ -17,4 +17,4 @@
 - [照顾|综合提升](https://github.com/suwe12/Octocat-Simulator/issues/new?title=CARE%7COctavia%7Cyour-name&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
 - [治疗|大幅恢复健康](https://github.com/suwe12/Octocat-Simulator/issues/new?title=HEAL%7COctavia%7Cyour-name&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
 
-**自动更新 / Auto-updated at 2025-11-18T08:21:04.472437+00:00**
+**自动更新 / Auto-updated at 2025-11-18T09:02:30.329141+00:00**
