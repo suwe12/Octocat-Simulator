@@ -1,9 +1,9 @@
 {
-  "last_updated": "2025-11-19T06:37:51.172481+00:00",
+  "last_updated": "2025-11-19T12:54:47.602757+00:00",
   "name": "Octavia",
-  "health": 55,
+  "health": 50,
   "hunger": 100,
-  "mood": 20,
+  "mood": 10,
   "level": 1,
   "owner_count": 0,
   "status_emoji": "😰"
