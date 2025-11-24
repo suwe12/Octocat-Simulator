@@ -1,10 +1,10 @@
 {
-  "last_updated": "2025-11-24T18:07:25.243092+08:00",
+  "last_updated": "2025-11-24T18:08:07.579415+08:00",
   "name": "Octavia",
   "health": 40,
-  "hunger": 100,
+  "hunger": 70,
   "mood": 90,
   "level": 1,
   "owner_count": 0,
-  "status_pic": "images/bad.png"
+  "status_pic": "images/normal.png"
 }
