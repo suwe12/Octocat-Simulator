@@ -5,7 +5,7 @@
 ## 状态概览 / Status Overview
 
 <!-- ![Octavia 当前状态](images/bad.png) -->
-<img src="images/bad.png" width="60%" alt="Octavia 当前状态">
+<img src="images/bad.png" width="40%" alt="Octavia 当前状态">
 
 - **健康 Health**: 95 / 100 ❤️❤️❤️❤️
 - **饥饿 Hunger**: 70 / 100 🍽️
