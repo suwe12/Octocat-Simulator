@@ -9,7 +9,7 @@ import os
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, Any
-
+from zoneinfo import ZoneInfo
 
 # 状态文件路径，路径为：项目根目录/data/state.json
 STATE_FILE = Path(__file__).parent.parent / "data" / "state.json"
@@ -47,7 +47,7 @@ def save_state(state: Dict[str, Any]) -> None:
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
     
     # 更新最后更新时间戳
-    state['last_updated'] = datetime.now(timezone.utc).isoformat()
+    state['last_updated'] = datetime.now(ZoneInfo("Asia/Shanghai")).isoformat()
     
     # 原子性写入：先写入临时文件，再重命名
     temp_file = STATE_FILE.with_suffix('.json.tmp')
@@ -73,14 +73,14 @@ def init_state() -> Dict[str, Any]:
         Dict[str, Any]: 初始状态字典
     """
     default_state = {
-        "last_updated": datetime.now(timezone.utc).isoformat(),
+        "last_updated": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(),
         "name": "Octavia",
         "health": 100,
         "hunger": 50,
         "mood": 80,
         "level": 1,
         "owner_count": 0,
-        "status_emoji": "🐙"
+        "status_pic": "images/good.png"
     }
     
     if not STATE_FILE.exists():

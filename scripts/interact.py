@@ -92,11 +92,11 @@ def apply_instruction(state: dict, instruction: str) -> dict:
     
     # 更新表情符号
     if state['health'] < 30 or state['hunger'] > 80 or state['mood'] < 20:
-        state['status_emoji'] = "😰"
+        state['status_pic'] = "images/bad.png"
     elif state['health'] < 60 or state['hunger'] > 60 or state['mood'] < 40:
-        state['status_emoji'] = "😐"
+        state['status_pic'] = "images/normal.png"
     else:
-        state['status_emoji'] = "🐙"
+        state['status_pic'] = "images/good.png"
     
     return state
 
@@ -134,6 +134,7 @@ def generate_response(state: dict, instruction: str, username: str) -> str:
 - **健康值**: {state['health']}/100 {'❤️' * (state['health'] // 20)}
 - **饥饿值**: {state['hunger']}/100 {'🍽️' * (10 - state['hunger'] // 10) if state['hunger'] < 100 else '😰'}
 - **心情值**: {state['mood']}/100 {'😊' * (state['mood'] // 20)}
+- **状态图片**: <img src="{state['status_pic']}" width="40%" alt="Octavia 当前状态">
 
 ---
 *状态已自动更新 | 最后更新: {state['last_updated']}*
@@ -221,7 +222,7 @@ Issue 标题格式不正确。
         print(f"  健康值: {state['health']}")
         print(f"  饥饿值: {state['hunger']}")
         print(f"  心情值: {state['mood']}")
-        print(f"  表情: {state['status_emoji']}")
+        print(f"  状态图片: {state['status_pic']}")
         
         # 生成反馈消息（使用实际作者名）
         response = generate_response(state, instruction, actual_author)

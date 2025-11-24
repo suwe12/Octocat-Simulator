@@ -39,11 +39,11 @@ def apply_decay(state):
     
     # 根据状态更新表情符号
     if state['health'] < 30 or state['hunger'] > 80 or state['mood'] < 20:
-        state['status_emoji'] = "😰"  # 状态不好
+        state['status_pic'] = "images/bad.png"  # 状态不好
     elif state['health'] < 60 or state['hunger'] > 60 or state['mood'] < 40:
-        state['status_emoji'] = "😐"  # 状态一般
+        state['status_pic'] = "images/normal.png"  # 状态一般
     else:
-        state['status_emoji'] = "🐙"  # 状态良好
+        state['status_pic'] = "images/good.png"  # 状态良好
     
     return state
 
@@ -58,6 +58,7 @@ def main():
         print(f"  健康值: {state['health']}")
         print(f"  饥饿值: {state['hunger']}")
         print(f"  心情值: {state['mood']}")
+        print(f"  状态图片: {state['status_pic']}")
         
         # 应用衰减
         state = apply_decay(state)
@@ -69,7 +70,7 @@ def main():
         print(f"  健康值: {state['health']}")
         print(f"  饥饿值: {state['hunger']}")
         print(f"  心情值: {state['mood']}")
-        print(f"  表情: {state['status_emoji']}")
+        print(f"  状态图片: {state['status_pic']}")
         print(f"\n✅ 状态已更新并保存")
         
     except Exception as e:

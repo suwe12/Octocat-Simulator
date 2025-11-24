@@ -46,11 +46,11 @@ def build_readme(state: dict) -> str:
 一个由社区驱动的、基于 GitHub Issues 的虚拟 Octocat 宠物养成项目。
 
 ## 状态概览 / Status Overview
-
+<img src="{state['status_pic']}" width="40%" alt="Octavia 当前状态">
 - **健康 Health**: {state['health']} / 100 ❤️❤️❤️❤️
 - **饥饿 Hunger**: {state['hunger']} / 100 {hunger_icons}
 - **心情 Mood**: {state['mood']} / 100 {mood_icons}
-- **当前表情 Emoji**: {state['status_emoji']}
+
 
 ## 可用指令 / Available Commands
 
