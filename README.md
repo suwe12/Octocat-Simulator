@@ -3,7 +3,7 @@
 一个由社区驱动的、基于 GitHub Issues 的虚拟 Octocat 宠物养成项目。
 
 ## 状态概览 / Status Overview
-<img src="images/normal.png" width="40%" alt="Octavia 当前状态">
+<img src="images/general.png" width="40%" alt="Octavia 当前状态">
 
 - **健康 Health**: 40 / 100 ❤️❤️❤️❤️
 - **饥饿 Hunger**: 70 / 100 🍽️

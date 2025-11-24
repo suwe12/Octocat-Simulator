@@ -88,7 +88,7 @@ def apply_instruction(state: dict, instruction: str) -> dict:
     if state['health'] < 30 or state['hunger'] > 80 or state['mood'] < 20:
         state['status_pic'] = "images/bad.png"
     elif state['health'] < 60 or state['hunger'] > 60 or state['mood'] < 40:
-        state['status_pic'] = "images/normal.png"
+        state['status_pic'] = "images/general.png"
     else:
         state['status_pic'] = "images/good.png"
     
