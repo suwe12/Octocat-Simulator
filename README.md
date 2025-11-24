@@ -5,17 +5,17 @@
 ## 状态概览 / Status Overview
 <img src="images/bad.png" width="40%" alt="Octavia 当前状态">
 
-- **健康 Health**: 0 / 100 ❤️❤️❤️❤️
-- **饥饿 Hunger**: 100 / 100 🍽️
+- **健康 Health**: 5 / 100 ❤️❤️❤️❤️
+- **饥饿 Hunger**: 60 / 100 🍽️🍽️
 - **心情 Mood**: 90 / 100 😊😊😊😊
 
 
 ## 可用指令 / Available Commands
 
-- [喂食|降低饥饿](https://github.com/suwe12/Octocat-Simulator/issues/new?title=FEED%7COctavia%7Cyour-name&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
-- [玩耍|玩耍，提升心情](https://github.com/suwe12/Octocat-Simulator/issues/new?title=PLAY%7COctavia%7Cyour-name&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
-- [抚摸|轻微提升心情](https://github.com/suwe12/Octocat-Simulator/issues/new?title=PET%7COctavia%7Cyour-name&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
-- [照顾|综合提升](https://github.com/suwe12/Octocat-Simulator/issues/new?title=CARE%7COctavia%7Cyour-name&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
-- [治疗|大幅恢复健康](https://github.com/suwe12/Octocat-Simulator/issues/new?title=HEAL%7COctavia%7Cyour-name&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
+- [喂食|降低饥饿](https://github.com/suwe12/Octocat-Simulator/issues/new?title=FEED%7COctavia&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
+- [玩耍|玩耍，提升心情](https://github.com/suwe12/Octocat-Simulator/issues/new?title=PLAY%7COctavia&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
+- [抚摸|轻微提升心情](https://github.com/suwe12/Octocat-Simulator/issues/new?title=PET%7COctavia&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
+- [照顾|综合提升](https://github.com/suwe12/Octocat-Simulator/issues/new?title=CARE%7COctavia&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
+- [治疗|大幅恢复健康](https://github.com/suwe12/Octocat-Simulator/issues/new?title=HEAL%7COctavia&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
 
-**自动更新 / Auto-updated at 2025-11-24T09:27:30.183634+00:00**
+**自动更新 / Auto-updated at 2025-11-24T18:01:22.260913+08:00**

@@ -17,39 +17,33 @@ from utils import load_state, save_state
 from decay import apply_decay
 
 
-def parse_instruction(issue_title: str) -> tuple:
+def parse_instruction(issue_title: str) -> str:
     """
-    从 Issue 标题中提取指令和作者名
+    从 Issue 标题中提取指令
     
-    标题格式：指令|Octavia|作者名
-    例如：FEED|Octavia|username
-    
-    Args:
-        issue_title: Issue 标题
-        
-    Returns:
-        tuple: (指令, 作者名) 如果解析成功，否则返回 (None, None)
+    标题格式：指令|Octavia
+    例如：FEED|Octavia
     """
     # 按 | 分割标题
     parts = issue_title.strip().split('|')
     
-    if len(parts) != 3:
-        return None, None
+    if len(parts) != 2:
+        return None
     
     instruction = parts[0].strip().upper()
     pet_name = parts[1].strip()
-    author = parts[2].strip()
+
     
     # 验证格式：中间部分应该是 Octavia
     if pet_name.upper() != 'OCTAVIA':
-        return None, None
+        return None
     
     # 验证指令是否有效
     valid_instructions = ['FEED', 'PLAY', 'PET', 'CARE', 'HEAL']
     if instruction not in valid_instructions:
-        return None, None
+        return None
     
-    return instruction, author
+    return instruction
 
 def apply_instruction(state: dict, instruction: str) -> dict:
     """
@@ -89,8 +83,8 @@ def apply_instruction(state: dict, instruction: str) -> dict:
         # 治疗：恢复健康
         state['health'] = min(100, state['health'] + 20)
         state['mood'] = min(100, state['mood'] + 10)
-    
-    # 更新表情符号
+
+    # 更新状态图片
     if state['health'] < 30 or state['hunger'] > 80 or state['mood'] < 20:
         state['status_pic'] = "images/bad.png"
     elif state['health'] < 60 or state['hunger'] > 60 or state['mood'] < 40:
@@ -114,18 +108,18 @@ def generate_response(state: dict, instruction: str, username: str) -> str:
         str: Markdown 格式的反馈消息
     """
     name = state['name']
-    emoji = state['status_emoji']
+    status_pic = state['status_pic']
     
     # 根据指令生成不同的消息
     messages = {
-        'FEED': f"感谢 @{username} 喂食 {name}！{emoji}",
-        'PLAY': f"感谢 @{username} 和 {name} 一起玩耍！{emoji}",
-        'PET': f"感谢 @{username} 抚摸 {name}！{emoji}",
-        'CARE': f"感谢 @{username} 照顾 {name}！{emoji}",
-        'HEAL': f"感谢 @{username} 治疗 {name}！{emoji}",
+        'FEED': f"感谢 @{username} 喂食 {name}！{status_pic}",
+        'PLAY': f"感谢 @{username} 和 {name} 一起玩耍！{status_pic}",
+        'PET': f"感谢 @{username} 抚摸 {name}！{status_pic}",
+        'CARE': f"感谢 @{username} 照顾 {name}！{status_pic}",
+        'HEAL': f"感谢 @{username} 治疗 {name}！{status_pic}",
     }
     
-    base_message = messages.get(instruction, f"感谢 @{username} 的指令！{emoji}")
+    base_message = messages.get(instruction, f"感谢 @{username} 的指令！")
     
     response = f"""## {base_message}
 
@@ -153,22 +147,17 @@ def main():
         
         if not issue_title:
             print("⚠️  警告: 未找到 Issue 标题，使用测试模式")
-            issue_title = "FEED Octavia"
+            issue_title = "FEED|Octavia"
             issue_author = "test-user"
         
         print(f"📝 Issue 标题: {issue_title}")
         print(f"👤 Issue 作者: {issue_author}")
 
         # 解析指令和作者名（从标题中提取）
-        instruction, title_author = parse_instruction(issue_title)
+        instruction = parse_instruction(issue_title)
         
-       # 优先使用标题中的作者名，如果没有则使用 GitHub 用户名
-        if title_author:
-            actual_author = title_author
-            print(f"👤 标题中的作者: {actual_author}")
-        else:
-            actual_author = issue_author
-            print(f"⚠️  未从标题解析到作者，使用 GitHub 用户名: {actual_author}")
+      
+        print(f"使用 GitHub 用户名: {issue_author}")
         
         if not instruction:
             print(f"❌ 未找到有效指令。支持的指令: FEED, PLAY, PET, CARE, HEAL")
@@ -188,9 +177,9 @@ Issue 标题格式不正确。
 - **HEAL** - 治疗 Octavia（恢复健康）
 
 ### 使用示例：
-- `FEED|Octavia|your-username`
-- `PLAY|Octavia|your-username`
-- `PET|Octavia|your-username`
+- `FEED|Octavia|`
+- `PLAY|Octavia|`
+- `PET|Octavia|`
 """
            # 将错误消息输出到文件，供 GitHub Actions 使用
             response_file = os.getenv('GITHUB_STEP_SUMMARY', '/tmp/response.md')
@@ -225,7 +214,7 @@ Issue 标题格式不正确。
         print(f"  状态图片: {state['status_pic']}")
         
         # 生成反馈消息（使用实际作者名）
-        response = generate_response(state, instruction, actual_author)
+        response = generate_response(state, instruction, issue_author)
         
         # 将反馈消息写入文件，供 GitHub Actions 使用
         response_file = os.getenv('GITHUB_STEP_SUMMARY', '/tmp/response.md')

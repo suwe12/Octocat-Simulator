@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
 README 自动更新脚本
-- 读取 data/state.json
-- 生成与现有 README 格式一致的中英双语内容
+
 """
 
 import json
@@ -12,8 +11,8 @@ ROOT_DIR = Path(__file__).parent.parent
 STATE_FILE = ROOT_DIR / "data" / "state.json"
 README_FILE = ROOT_DIR / "README.md"
 
-# 统一的 Issue 链接模板（记得根据需要调整默认的作者名）
-DEFAULT_AUTHOR = "your-name"
+
+
 ISSUE_BASE = "https://github.com/suwe12/Octocat-Simulator/issues/new?title={title}&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create'"
 
 COMMAND_LINKS = [
@@ -29,7 +28,7 @@ def load_state():
         return json.load(f)
 
 def build_link(label: str, command: str) -> str:
-    title = f"{command}%7COctavia%7C{DEFAULT_AUTHOR}"
+    title = f"{command}%7COctavia"
     url = ISSUE_BASE.format(title=title)
     return f"- [{label}]({url})"
 
@@ -47,6 +46,7 @@ def build_readme(state: dict) -> str:
 
 ## 状态概览 / Status Overview
 <img src="{state['status_pic']}" width="40%" alt="Octavia 当前状态">
+
 - **健康 Health**: {state['health']} / 100 ❤️❤️❤️❤️
 - **饥饿 Hunger**: {state['hunger']} / 100 {hunger_icons}
 - **心情 Mood**: {state['mood']} / 100 {mood_icons}
