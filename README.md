@@ -5,8 +5,8 @@
 ## 状态概览 / Status Overview
 <img src="images/bad.png" width="40%" alt="Octavia 当前状态">
 
-- **健康 Health**: 5 / 100 ❤️❤️❤️❤️
-- **饥饿 Hunger**: 60 / 100 🍽️🍽️
+- **健康 Health**: 25 / 100 ❤️❤️❤️❤️
+- **饥饿 Hunger**: 80 / 100 🍽️
 - **心情 Mood**: 90 / 100 😊😊😊😊
 
 
@@ -18,4 +18,4 @@
 - [照顾|综合提升](https://github.com/suwe12/Octocat-Simulator/issues/new?title=CARE%7COctavia&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
 - [治疗|大幅恢复健康](https://github.com/suwe12/Octocat-Simulator/issues/new?title=HEAL%7COctavia&body=You%20don't%20need%20to%20do%20anything,%20just%20click%20'create')
 
-**自动更新 / Auto-updated at 2025-11-24T18:01:22.260913+08:00**
+**自动更新 / Auto-updated at 2025-11-24T18:05:31.521235+08:00**
